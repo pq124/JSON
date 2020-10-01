@@ -14,5 +14,6 @@ func main() {
 	
 	//3、启动应用
 	beego.Run()//代码简洁
+
 }
 

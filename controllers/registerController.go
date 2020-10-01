@@ -1,8 +1,9 @@
 package controllers
 
 import (
-	"HelloBeego0604/dbmysql"
-	"HelloBeego0604/models"
+	"BeegoProject0603/db_mysql"
+	"BeegoProject0603/models"
+
 	"crypto/md5"
 	"encoding/hex"
 	"encoding/json"
@@ -36,7 +37,7 @@ func (r *RegisterController) Post() {
 	}
 	//一切正常，将用户信息保存到数据库中
 	//直接调用保存数据的一个函数，并判断保存后的结果
-	row, err := dbmysql.AddUser(user)
+	row, err := db_mysql.AddUser(user)
 	if err != nil{
 		//r.Ctx.WriteString("注册用户信息失败，请重试")
 		result := models.Result{
@@ -60,5 +61,4 @@ func (r *RegisterController) Post() {
 	r.Data["json"] = &result
 	r.ServeJSON()//将result编码为json格式返回给前端
 	//r.Ctx.WriteString("恭喜,注册用户信息成功")
-
 }
