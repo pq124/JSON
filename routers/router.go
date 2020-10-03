@@ -7,7 +7,7 @@ import (
 
 func init() {
 	//用户注册功能接口 http://127.0.0.1:8080/register
-	beego.Router("/root",&controllers.RegisterController{})
+	beego.Router("/login",&controllers.RegisterController{})
 	//http://127.0.0.1:8080
     beego.Router("/", &controllers.MainController{})
 }
