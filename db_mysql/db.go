@@ -28,10 +28,10 @@ func Connect(){
 
 	//连接数据库
 	connUrl := dbUser +":" + dbPassword + "@tcp("+dbIp+")/"+dbName+"?charset=utf8"
-	db, err := sql.Open(dbDriver,connUrl)
-	if err != nil {// err不为nil，表示连接数据库时出现了错误, 程序就在此中断就可以，不用再执行了。
-		//早解决，早解决
-		panic("数据库连接错误，请检查配置")
+		db, err := sql.Open(dbDriver,connUrl)
+		if err != nil {// err不为nil，表示连接数据库时出现了错误, 程序就在此中断就可以，不用再执行了。
+			//早解决，早解决
+			panic("数据库连接错误，请检查配置")
 	}
 	Db = db
 	fmt.Println(db)

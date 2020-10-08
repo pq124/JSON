@@ -23,6 +23,8 @@ func (r *RegisterController) Post() {
 		r.Ctx.WriteString("数据接错误，请重试")
 		return
 	}
+
+
 	var user models.User
 	err =json.Unmarshal(dataBytes,&user)
 	if err != nil{
@@ -41,7 +43,7 @@ func (r *RegisterController) Post() {
 	if err != nil{
 		//r.Ctx.WriteString("注册用户信息失败，请重试")
 		result := models.Result{
-			Code: 0,
+			Code: 2,
 			Message: "注册用户信息失败,请重试",
 			Data: nil,
 		}
